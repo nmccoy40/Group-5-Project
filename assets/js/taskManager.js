@@ -22,6 +22,8 @@ class TaskManager {
                 assignedTo: assignedTo,
                 dueDate: dueDate,
                 status: 'TODO'
+
+                
             }
         );
     }
@@ -39,3 +41,6 @@ task1.addTask('clean bathroom', 'clean tub and toilet', 'JP', '11/16/2022');
 console.log(task0);
 console.log(task1);
 console.log(TaskManager.tasks);
+
+
+
