@@ -17,11 +17,6 @@ form {
     position: relative;
 }
  
-.list-group {
-    display: flex;
-    justify-items: flex-start;
-}
- 
 .list-group-item {
     border: none;
     width: 70%;

@@ -1,16 +1,20 @@
 let createTaskHtml = (name, description, assignedTo, dueDate, status) => {
     const html = `
-    <li class="'list-group-item">
-    <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
-        <h5>${name}</h5>
-        <span class="badge badge-danger">${status}</span>
-    </div>
-    <div class="d-flex w-100 mt-3 justify-content-between">
-            <small>Assigned To: ${assignedTo}</small>
-            <small>Due: ${dueDate}</small>
-    </div>
-    <p>${description}</p>
-</li>
+    <li class="list-group-item">
+                <div class="card" style="width: 32rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">${name}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">${assignedTo}</h6>
+                        <p class="card-text">${description}</p>
+                        <p class="card-text">${dueDate}</p>
+                        <p class="card-text">${status}</p>
+                        <div class="btns mx-auto" aria-label="Basic example">
+                            <button type="button" class="btn btn-outline-success done-btn"><i class="fa fa-check"></i></button>
+                            <button type="button" class="btn btn-outline-danger trash-btn"><i class="fa fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </li>
     `
     return html;
 }
@@ -45,12 +49,11 @@ class TaskManager {
         let tasksHtmlList = [];
         for (let i = 0; i < this.tasks.length; i++) {
             let currentTask = this.tasks[i];
-            let date = new Date(currentTask.dueDate);
-            let formattedDate;
-            let taskHtml = createTaskHtml(currentTask.name, currentTask.description, currentTask.assignedTo, currentTask.formattedDate, currentTask.status);
+            let taskHtml = createTaskHtml(currentTask.name, currentTask.description, currentTask.assignedTo, currentTask.dueDate, currentTask.status);
             tasksHtmlList.push(taskHtml);
         }
-        let taskHtml;
+        let tasksHtml = tasksHtmlList.join('\n');
+        document.getElementById('taskList').innerHTML = tasksHtml;
     }
 }
  
