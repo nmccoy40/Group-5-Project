@@ -16,11 +16,19 @@ form {
     border: none;
     position: relative;
 }
- 
+
 .list-group-item {
     border: none;
     width: 70%;
     margin-left: 25px;
-    justify-items: start;
+    justify-content: center !important;
  
+}
+
+#descriptiontext {
+    margin-bottom: 10px;;
+}
+
+.status {
+    font-size: x-small;
 }
