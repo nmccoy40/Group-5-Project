@@ -1,4 +1,6 @@
 let task1 = new TaskManager();
+task1.addTask('clean room', 'make bed', 'JP', '11/16/2022', 'TODO');
+task1.addTask('clean living room', 'vacuum', 'JP', '11/16/2022', "TODO");
 console.log(task1.tasks);
 task1.load();
 task1.render();
