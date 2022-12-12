@@ -3,7 +3,9 @@
 
 
 ## Technologies
-
+*HTML
+*CSS
+*Javascript
 
 ## Installation
 
